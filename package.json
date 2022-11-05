@@ -1,0 +1,42 @@
+{
+  "name": "bulksend",
+  "version": "0.1.0",
+  "private": true,
+  "main": "GoogleSheet.js",
+  "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
+    "alchemy-sdk": "^2.2.0",
+    "dotenv": "^16.0.3",
+    "ethers": "^5.7.2",
+    "framer": "^2.2.1",
+    "google-spreadsheet": "^3.3.0",
+    "googleapis": "^109.0.1",
+    "http2": "^3.3.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "4.0.3",
+    "web3": "^1.8.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/google-spreadsheet": "^3.3.0"
+  }
+}

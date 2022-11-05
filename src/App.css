@@ -1,0 +1,384 @@
+/** @format */
+
+.App_page1 {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(8, 11, 26);
+}
+
+.navbar {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  left: 0px;
+  top: 0px;
+  background: #121d33;
+}
+
+.appname {
+  position: absolute;
+  width: max-content;
+  height: 30px;
+  left: 67px;
+  top: 28px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #ffffff;
+}
+.connectWallet {
+  box-sizing: border-box;
+  position: absolute;
+  width: 250px;
+  height: 39px;
+  right: 20px;
+  top: 19px;
+  background: #121d33;
+  border: 0ch;
+  border-bottom: 1px solid #ecf5f3;
+  border-top: 1px solid #ecf5f3;
+  border-radius: 7px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #ecf5f3;
+}
+
+.container {
+  position: absolute;
+  width: 517px;
+  height: 400px;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: 160px;
+  background: rgb(8, 11, 26);
+  overflow: auto;
+}
+
+.myTable {
+  position: absolute;
+  width: max-content;
+  height: 300px;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: 200px;
+  background: rgb(8, 11, 26);
+  border-top: 1px solid #0dcbe4;
+  overflow: auto;
+}
+
+h3 {
+  position: absolute;
+  width: max-content;
+  height: 30px;
+  left: 51%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: 90px;
+  background: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #ffffff;
+}
+
+.empName {
+  position: absolute;
+  width: max-content;
+  height: 30px;
+  left: 20%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: 160px;
+  background: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #0dcbe4;
+}
+.empAddress {
+  position: absolute;
+  width: max-content;
+  height: 30px;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: 160px;
+  background: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #0dcbe4;
+}
+
+.empAmount {
+  position: absolute;
+  width: max-content;
+  height: 30px;
+  left: 80%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: 160px;
+  background: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #0dcbe4;
+}
+
+.addBtn {
+  position: absolute;
+  width: 150px;
+  height: 40px;
+  right: 35px;
+  top: 160px;
+  background: #121d33;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  color: #ffffff;
+  border: 1px solid;
+  border-radius: 6px;
+}
+
+.addBtn:hover {
+  background: rgb(0, 132, 255);
+  cursor: pointer;
+}
+
+.employees {
+  box-sizing: border-box;
+  position: relative;
+  width: 960px;
+  height: 30px;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  background: none;
+  /* border: 1px solid #ecf5f3; */
+  border-radius: 4px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.Number {
+  position: absolute;
+  width: max-content;
+  height: 25px;
+  left: 0px;
+  top: 8px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 25px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.googleSheetName {
+  position: absolute;
+  width: max-content;
+  height: 25px;
+  left: 50px;
+  top: 8px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 25px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.googleSheetAddress {
+  position: absolute;
+  width: max-content;
+  height: 25px;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: 8px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 25px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.googleSheetAmount {
+  position: absolute;
+  width: max-content;
+  height: 25px;
+  right: 20px;
+  top: 8px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 25px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.tokens {
+  box-sizing: border-box;
+  position: relative;
+  width: 477px;
+  height: 50px;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  background: #121d33;
+  /* border: 1px solid #ecf5f3; */
+  border-radius: 4px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.tokens_name {
+  position: absolute;
+  width: max-content;
+  height: 25px;
+  left: 50px;
+  top: 8px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 25px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.tokens_price {
+  position: absolute;
+  width: max-content;
+  height: 30px;
+  right: 8px;
+  top: 7px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.tokenLogo {
+  position: relative;
+  left: 6px;
+  width: 30px;
+  height: 30px;
+  top: 7px;
+  border-radius: 50%;
+  background: #121d33;
+  cursor: pointer;
+}
+
+/* ===============page2==================== */
+
+.inputs_ {
+  box-sizing: border-box;
+  position: relative;
+  width: 477px;
+  height: 52px;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  background: none;
+  border: 1px solid #ecf5f3;
+  border: 0;
+  margin-top: 20px;
+}
+
+.input_ {
+  box-sizing: border-box;
+  position: absolute;
+  width: 325px;
+  height: 38px;
+  right: -25px;
+  top: -8px;
+
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #ecf5f3;
+  outline: 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+.tableInput {
+  box-sizing: border-box;
+  position: absolute;
+  width: 285px;
+  left: 65px;
+  /* height: 38px; */
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #ecf5f3;
+  outline: 0;
+  color: #ffffff;
+  text-align: center;
+}
+.tableInput1 {
+  box-sizing: border-box;
+  position: absolute;
+  width: 285px;
+  /* height: 38px; */
+  left: 355px;
+
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #ecf5f3;
+  outline: 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+.sendBtn {
+  position: absolute;
+  width: 325px;
+  height: 52px;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: 550px;
+
+  background: #121d33;
+  border-bottom: 1px solid #ecf5f3;
+  border-radius: 7px;
+  color: #ffffff;
+  border: 0ch;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #ffffff;
+}
+
+.sendBtn:hover {
+  background: rgb(0, 132, 255);
+  cursor: pointer;
+}
+
+/* =====================gg sheets=================== */
