@@ -1,0 +1,5 @@
+{
+  "sheetId": "sheetId",
+  "clientEmail": "seviceaccount",
+  "privateKey": "-----BEGIN PRIVATE KEY-----\n...example...\n-----END PRIVATE KEY-----\n"
+}
