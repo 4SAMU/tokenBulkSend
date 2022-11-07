@@ -5,7 +5,8 @@ import { useLocation } from "react-router-dom";
 import "../App.css";
 import { connectWallet } from "../utils/walletConnect";
 import { ethers } from "ethers";
-import ContractAbi from "../abi.json";
+// import ContractAbi from "../abi.json";
+import multi from "../multitrasfer.json";
 import { Sheet } from "../utils/GoogleSheet";
 
 const Send = () => {
@@ -17,6 +18,9 @@ const Send = () => {
   const [acc, setAddress] = useState();
   const [data, setData] = useState([]);
 
+  const [addreses, setAddresses] = useState({});
+  const [amounts, setAmounts] = useState([]);
+
   const [dataFetched, updateDataFetched] = useState(false);
 
   const walletConnect = async () => {
@@ -26,35 +30,93 @@ const Send = () => {
     );
   };
 
+  async function addressesArray() {
+    const readSheet = await Sheet();
+    const dataItems = readSheet.rows;
+    const items = await Promise.all(
+      dataItems.map((index) => {
+        const addresss = index._rawData[1];
+        // const amount = index._rawData[2];
+
+        // let array = [addresss];
+        // const addressesArray = [];
+        // addressesArray.push()
+
+        return addresss;
+      })
+    );
+    setAddresses(items);
+  }
+  if (!dataFetched) addressesArray();
+
+  async function amountsArray() {
+    const readSheet = await Sheet();
+    const dataItems = readSheet.rows;
+    const items = await Promise.all(
+      dataItems.map((index) => {
+        // const addresss = index._rawData[1];
+        const amount = ethers.utils.parseEther(index._rawData[2]);
+        // const priceFormatted = ethers.utils.parseEther(x.toString());
+
+        // let array = [addresss];
+        // const addressesArray = [];
+        // addressesArray.push()
+
+        return amount;
+      })
+    );
+    setAmounts(items);
+  }
+  if (!dataFetched) amountsArray();
+
   const multiSend = async () => {
     // const { toAddress, amount } = formData;
-
+    // event.currentTarget.disabled = true;
     try {
-      const readSheet = await Sheet();
-      await readSheet.sheet.loadCells(`A1:Z${readSheet.rows.length + 1}`);
-
+      // const readSheet = await Sheet();
+      // await readSheet.sheet.loadCells(`A1:Z${readSheet.rows.length + 1}`);
       //=====================================
 
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
-      let contract = new ethers.Contract(tokenAddress, ContractAbi.abi, signer);
+      let contract = new ethers.Contract(multi.address, multi.abi, signer);
 
-      // const googleSheetItems = await Sheet();
-      let i;
-      for (i = 2; i <= readSheet.rows.length + 1; i++) {
-        const name = readSheet.sheet.getCellByA1(`A${i}`).formattedValue;
-        const addreses = readSheet.sheet.getCellByA1(`B${i}`).formattedValue;
-        const amount = readSheet.sheet.getCellByA1(`C${i}`).formattedValue;
-        console.log(`${name}:${addreses}: ${amount}`);
+      // const dataItems = readSheet.rows;
 
-        const priceFormatted = ethers.utils.parseEther(amount.toString());
-        const transaction = await contract.transfer(addreses, priceFormatted);
-        await transaction.wait();
+      // dataItems.map((index) => {
+      //   const addresss = index._rawData[1];
+      //   const amount = index._rawData[2];
+      //   // const addressesArray = [];
+      //   // const amountArray = [];
 
-        // return { name, addreses, amount };
-      }
+      //   // addressesArray.push(addresss);
+      //   // amountArray.push(amount);
+
+      //   let addressesArray = [addresss];
+      //   let amountArray = {
+      //     amount,
+      //   };
+      //   console.log(addressesArray);
+      // });
+
+      // let i;
+      // for (i = 0; i <= dataItems.length + 1; i++) {
+      //   addressesArray.push(addresss);
+      //   amountArray.push(amount);
+
+      //   console.log("here", addressesArray, amountArray);
+      // }
+
+      // let x = 0.01;
+      const transaction = await contract.multiTransfer(
+        tokenAddress,
+        addreses,
+        amounts
+      );
+      await transaction.wait();
 
       alert("successfully finished all tx");
+      console.log(addreses);
     } catch (error) {
       console.log(error);
     }

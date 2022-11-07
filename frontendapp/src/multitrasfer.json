@@ -1,0 +1,65 @@
+{
+  "address": "0x653D850CE34f3a39Bb43C63dEE5AF99790680B17",
+  "abi": [
+    { "type": "constructor", "payable": false, "inputs": [] },
+    {
+      "type": "function",
+      "name": "balance",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [],
+      "outputs": [{ "type": "uint256" }]
+    },
+    {
+      "type": "function",
+      "name": "balanceOf",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [{ "type": "address", "name": "_owner" }],
+      "outputs": [{ "type": "uint256" }]
+    },
+    {
+      "type": "function",
+      "name": "getOwner",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [],
+      "outputs": [{ "type": "address" }]
+    },
+    {
+      "type": "function",
+      "name": "multiTransfer",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        { "type": "address", "name": "_tokenAddress" },
+        { "type": "address[]", "name": "_toAddresses" },
+        { "type": "uint256[]", "name": "_amount" }
+      ],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "owner",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [],
+      "outputs": [{ "type": "address" }]
+    },
+    {
+      "type": "function",
+      "name": "transfer",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        { "type": "address", "name": "to" },
+        { "type": "uint256", "name": "value" }
+      ],
+      "outputs": [{ "type": "bool" }]
+    }
+  ]
+}

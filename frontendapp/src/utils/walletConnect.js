@@ -1,6 +1,7 @@
 /** @format */
 // import { ethers } from "ethers";
 import { Alchemy, Network } from "alchemy-sdk";
+import multi from "../multitrasfer.json";
 
 export const connectWallet = async () => {
   try {
@@ -26,7 +27,7 @@ const alchemy = new Alchemy(config);
 export const myTokens = async () => {
   try {
     // Wallet address
-    const address = await connectWallet();
+    const address = multi.address; //await connectWallet();
 
     const tokenContractAddresses = [
       "0x05E3E0E24bd43c766bDe441b2307fE94703aD1B1", //samu
