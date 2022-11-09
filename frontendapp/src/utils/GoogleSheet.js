@@ -17,8 +17,10 @@ export const Sheet = async () => {
   // await doc.updateProperties({ title: " Token Bulk send" });
 
   const sheet = doc.sheetsByIndex[0]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
+  const sheet2 = doc.sheetsByIndex[1]; // or use doc.sheetsById[id] or doc.sheetsByTitle[title]
   const rows = await sheet.getRows();
+  const rowSheet2 = await sheet2.getRows();
 
-  return { sheet, rows };
+  return { sheet, rows,rowSheet2, sheet2 };
 };
 // Sheet();

@@ -29,6 +29,53 @@
   line-height: 30px;
   color: #ffffff;
 }
+
+.txhistory {
+  position: absolute;
+  width: max-content;
+  height: 30px;
+  right: 300px;
+  top: 28px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+  background: none;
+  border: 0ch;
+}
+
+.selectTokens {
+  position: absolute;
+  width: max-content;
+  height: 30px;
+  right: 580px;
+  top: 28px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+  background: none;
+  border: 0ch;
+}
+
+a {
+  color: #ecf5f3;
+  text-decoration: none;
+}
+a:hover {
+  color: #0dcbe4;
+  text-decoration: solid;
+  border-bottom: 1px solid #0dcbe4;
+}
+.active {
+  color: #0dcbe4;
+  text-decoration: solid;
+  border-bottom: 1px solid #0dcbe4;
+}
 .connectWallet {
   box-sizing: border-box;
   position: absolute;
@@ -52,12 +99,24 @@
 .container {
   position: absolute;
   width: 517px;
-  height: 400px;
+  height: 170px;
   left: 50%;
   transform: translateY(-50%);
   transform: translateX(-50%);
   top: 160px;
   background: rgb(8, 11, 26);
+  overflow: auto;
+}
+
+.howitworks {
+  position: absolute;
+  width: 1300px;
+  height: 350px;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: 350px;
+  background: #121d33;
   overflow: auto;
 }
 
@@ -294,6 +353,127 @@ h3 {
   cursor: pointer;
 }
 
+h2 {
+  position: absolute;
+  left: 20%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: 7px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #ffffff;
+}
+
+.circle1 {
+  position: absolute;
+  left: 30px;
+  width: 50px;
+  height: 50px;
+  top: 100px;
+  border-radius: 50%;
+  background: #bcbd7b;
+  /* cursor: pointer; */
+}
+.circle2 {
+  position: absolute;
+  left: 38%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  top: 100px;
+  border-radius: 50%;
+  background: #705927;
+  /* cursor: pointer; */
+}
+
+.circle3 {
+  position: absolute;
+  right: 340px;
+  /* transform: translateY(-50%);
+  transform: translateX(-50%); */
+  width: 50px;
+  height: 50px;
+  top: 100px;
+  border-radius: 50%;
+  background: #e43104;
+  /* cursor: pointer; */
+}
+
+.circleText {
+  position: absolute;
+  width: max-content;
+  left: 10px;
+  top: 55px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #ffffff;
+}
+
+.line {
+  position: absolute;
+  width: 390px;
+  left: 50px;
+  top: 25px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  border-bottom: 5px solid #705927;
+  color: #ffffff;
+}
+.line1 {
+  position: absolute;
+  width: 390px;
+  left: 50px;
+  top: 25px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  border-bottom: 5px solid #e43104;
+  color: #ffffff;
+}
+
+select {
+  position: absolute;
+  left: 30px;
+  width: 200px;
+  height: 50px;
+  top: 200px;
+  border-radius: 10px;
+  background: #bcbd7b;
+  border: 0ch;
+  color: #e43104;
+}
+
+.inputs {
+  box-sizing: border-box;
+  position: absolute;
+  left: 10px;
+  top: 100px;
+  background: none;
+  border: 0;
+  margin-top: 20px;
+  border-bottom: 1px solid #ecf5f3;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  color: #ffffff;
+  outline: 0;
+}
+
 /* ===============page2==================== */
 
 .inputs_ {
@@ -317,13 +497,6 @@ h3 {
   height: 38px;
   right: -25px;
   top: -8px;
-
-  background: none;
-  border: 0;
-  border-bottom: 1px solid #ecf5f3;
-  outline: 0;
-  color: #ffffff;
-  text-align: center;
 }
 
 .tableInput {
@@ -353,15 +526,34 @@ h3 {
   color: #ffffff;
   text-align: center;
 }
+.sendBtnLandingPAge {
+  position: absolute;
+  width: 200px;
+  height: 45px;
+  left: 10px;
+  top: 100px;
+
+  background: #e43104;
+  border-bottom: 1px solid #ecf5f3;
+  border-radius: 7px;
+  color: #ffffff;
+  border: 0ch;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  color: #ffffff;
+}
 
 .sendBtn {
   position: absolute;
-  width: 325px;
-  height: 52px;
+  width: 200px;
+  height: 45px;
   left: 50%;
   transform: translateY(-50%);
   transform: translateX(-50%);
-  top: 550px;
+  top: 490px;
 
   background: #121d33;
   border-bottom: 1px solid #ecf5f3;
@@ -371,7 +563,7 @@ h3 {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  font-size: 25px;
+  font-size: 22px;
   line-height: 30px;
   color: #ffffff;
 }
@@ -381,4 +573,94 @@ h3 {
   cursor: pointer;
 }
 
-/* =====================gg sheets=================== */
+/* =====================txHistory=================== */
+.txhistoryData {
+  box-sizing: border-box;
+  position: relative;
+  width: 860px;
+  height: 30px;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  background: none;
+  /* border: 1px solid #ecf5f3; */
+  border-radius: 4px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.tokenSend {
+  position: absolute;
+  width: max-content;
+  height: 25px;
+  left: 37px;
+  top: 8px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 25px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.tokenSendData {
+  position: absolute;
+  width: max-content;
+  height: 30px;
+  left: 26%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: 160px;
+  background: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #ebf2f3;
+}
+
+.txhistoryTable {
+  position: absolute;
+  width: 880px;
+  height: 300px;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: 200px;
+  background: rgb(8, 11, 26);
+  border: 1px solid #eff4f5;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.date {
+  position: absolute;
+  width: max-content;
+  height: 30px;
+  left: 60%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: 160px;
+  background: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #d7dedf;
+}
+
+.Loader {
+  color: #eceff1;
+  animation: reload_spin infinite 2s linear;
+}
+@keyframes reload_spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

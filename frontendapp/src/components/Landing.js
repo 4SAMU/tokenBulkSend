@@ -1,27 +1,25 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../App.css";
 import { ethers } from "ethers";
 import { Alchemy, Network } from "alchemy-sdk";
-import { connectWallet, myTokens } from "../utils/walletConnect";
+import { myTokens } from "../utils/walletConnect";
+import Navbar from "./Navbar";
+import multi from "../multitrasfer.json";
+import Loader from "../utils/Loader";
+import { toast } from "react-toastify";
 
 const Landing = () => {
-  const [acc, setAddress] = useState();
   const [data, setData] = useState([]);
-
   const [dataFetched, updateDataFetched] = useState(false);
-
-  const walletConnect = async () => {
-    const address = await connectWallet();
-    setAddress(
-      String(address).substring(0, 5) + "..." + String(address).substring(38)
-    );
-  };
+  const [tokenValue, setTokenValue] = useState();
+  const [busy, setBusy] = useState(false);
+  const [amount, setAmount] = useState({ amt: "" });
 
   const getMyToken = async () => {
-    const tokens =await myTokens();
+    const tokens = await myTokens();
     const itemsFound = tokens.tokenBalances;
 
     // alchemy sdk
@@ -54,34 +52,47 @@ const Landing = () => {
     updateDataFetched(true);
   };
 
-  useEffect(() => {
-    walletConnect();
-  }, []);
   window.setInterval(async function () {
-    walletConnect();
-
     if (!dataFetched) {
       await getMyToken();
     }
   }, 60000);
 
   if (!dataFetched) getMyToken();
+  const handleChange = (newTokenAddress) => {
+    setTokenValue(newTokenAddress);
+    // alert(newTokenAddress);
+  };
+
+  async function fundWallet() {
+    try {
+      setBusy(true);
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      let contract = new ethers.Contract(tokenValue, multi.abi, signer);
+
+      const transaction = await contract.transfer(
+        multi.address,
+        ethers.utils.parseEther(amount.amt)
+      );
+      await transaction.wait();
+      setBusy(false);
+      toast.success(`You have transferred${amount.amt} to your wallet`);
+      setAmount({ amt: "" });
+
+      // const tx =
+    } catch (error) {
+      if (error) {
+        setBusy(false);
+      }
+      toast.error(error.code);
+    }
+  }
+
   return (
     <div className="App_page1">
-      <nav className="navbar">
-        <label className="appname">Tokens Bulksender</label>
-        {!acc ? (
-          <button className="connectWallet" onClick={walletConnect}>
-            connect Wallet
-          </button>
-        ) : (
-          <button className="connectWallet" onClick={null}>
-            {acc}
-          </button>
-        )}
-      </nav>
+      <Navbar />
       <h3>Tokens</h3>
-
       <div className="container">
         {data.map((item, i) => (
           <NavLink
@@ -97,6 +108,44 @@ const Landing = () => {
             </div>
           </NavLink>
         ))}
+      </div>
+      <div className="howitworks">
+        <h2>To add funds to your Wallet</h2>
+        <div className="circle1">
+          <div className="line"></div>
+          <span className="circleText">select Token</span>
+        </div>
+        <div className="circle2">
+          <div className="line1"></div>
+          <span className="circleText">Enter Amount of tokens</span>
+          <input
+            className="inputs"
+            placeholder="tokens amount"
+            value={amount.amount}
+            onChange={(e) => setAmount({ ...amount, amt: e.target.value })}
+          ></input>
+        </div>
+        <div className="circle3">
+          <span className="circleText">Confirm</span>
+          <button className="sendBtnLandingPAge" onClick={fundWallet}>
+            {busy ? <Loader /> : "confirm"}
+          </button>
+        </div>
+        <select
+          onChange={(e) => handleChange(e.target.value)}
+          value={tokenValue}
+        >
+          <option>select tokens</option>
+          <option value="0xfbC8E473eB41854DB5c760572FA89D77dD5279C2">
+            Binance (BNB)
+          </option>
+          <option value="0xaD141A0891325412BB652428d4EBd5829287f27B">
+            Tether (USDT)
+          </option>
+          <option value="0x6b2758d81d6155f6B76F8BD0778A01d1409dBE5E">
+            Royalty (ROYT)
+          </option>
+        </select>
       </div>
     </div>
   );
